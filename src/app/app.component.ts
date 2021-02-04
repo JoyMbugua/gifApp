@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'gif-App';
+  
+  performSearch(searchTerm: any): void{
+    console.log(`the user entered ${searchTerm.value}`)
+  }
 }

@@ -1,0 +1,7 @@
+<button class="btn btn-outline-info btn-lg" (click)='loadMore()'>Load More</button>
+
+<div class="giphys">
+    <div class="gif" *ngFor="let gif of gifs">
+      <img [src]="gif.images.downsized.url" alt="image" />
+    </div>
+  </div>
