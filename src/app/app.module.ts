@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { GifsComponent } from './gifs/gifs.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchComponent } from './search/search.component';
-import { LoadmoreComponent } from './loadmore/loadmore.component';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +17,6 @@ import { LoadmoreComponent } from './loadmore/loadmore.component';
     GifsComponent,
     HeaderComponent,
     SearchComponent,
-    LoadmoreComponent
   ],
   imports: [
     BrowserModule,

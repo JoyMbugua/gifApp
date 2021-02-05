@@ -1,7 +1,9 @@
-/* main {
+main {
     background-color: black;
     color: white;
-} */
+    height: 100vh;
+}
+
 .giphys {
     display: grid;
     grid-template-columns: auto auto auto auto;

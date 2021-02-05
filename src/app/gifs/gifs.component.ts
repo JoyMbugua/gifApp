@@ -3,6 +3,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Gif } from '../gif-class/gif';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { environment } from '../../environments/environment';
+import { GiphyService } from '../giphy.service';
 
 @Component({
   selector: 'app-gifs',
@@ -13,22 +14,13 @@ export class GifsComponent implements OnInit {
 
   giphies: [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private service: GiphyService) { }
 
   ngOnInit(): void {
 
-    let promise: any = new Promise((resolve, reject) => {
-      this.http.get(environment.trendyUrl).toPromise().then(response => {
-        this.giphies = response.data;
-        console.log(this.giphies)
-        resolve(response)
-      }, error => {
-        console.log(error);
-        reject(error);
-      })
+    this.service.getGifs().subscribe(response => {
+      this.giphies = response['data'];
     })
-
-    return promise;
   }
 
 }

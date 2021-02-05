@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  trendyUrl: "https://api.giphy.com/v1/gifs/trending?api_key=QYcjD5z7LWKfQRPOty8CBTT94EpPS7Lk&limit=50&rating=g"
+  trendyKey: "QYcjD5z7LWKfQRPOty8CBTT94EpPS7Lk"
 };
 
 /*

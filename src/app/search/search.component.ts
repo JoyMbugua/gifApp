@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-search',
@@ -14,13 +15,14 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  performSearch(searchTerm: string): void{
-    let apiLink: string = `https://api.giphy.com/v1/gifs/search?api_key=QYcjD5z7LWKfQRPOty8CBTT94EpPS7Lk&q=${searchTerm}&limit=50&offset=0&rating=g&lang=en`;
+  performSearch(searchTerm) {
+    let apiLink: string = `https://api.giphy.com/v1/gifs/search?api_key=${environment.trendyKey}&q=${searchTerm}&limit=50&offset=0&rating=g&lang=en`;
 
-    this.http.get(apiLink).subscribe(response => {
-      this.results = response.data;
-      // console.log(this.results)
-      return this.results;
+    this.http.get(apiLink).subscribe(data=> {
+      // Succesful API request
+      this.results = data['data'];
+    },err=>{
+        alert('Not found')
     })
   }
 }
