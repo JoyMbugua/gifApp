@@ -15,7 +15,7 @@ export class SearchComponent implements OnInit {
   }
 
   performSearch(searchTerm: string): void{
-    let apiLink: string = `https://api.giphy.com/v1/gifs/search?api_key=Cb70lMkZKb7Wpz0mRsEAdQ694gsjQ00t&q=${searchTerm}&limit=50&offset=0&rating=g&lang=en`;
+    let apiLink: string = `https://api.giphy.com/v1/gifs/search?api_key=QYcjD5z7LWKfQRPOty8CBTT94EpPS7Lk&q=${searchTerm}&limit=50&offset=0&rating=g&lang=en`;
 
     this.http.get(apiLink).subscribe(response => {
       this.results = response.data;
